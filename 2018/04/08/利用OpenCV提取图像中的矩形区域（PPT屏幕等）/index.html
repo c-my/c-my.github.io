@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -48,21 +48,21 @@
 
 
 
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -83,29 +83,29 @@
 <meta name="keywords" content="opencv,c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用OpenCV提取图像中的矩形区域（PPT屏幕等）">
-<meta property="og:url" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/index.html">
+<meta property="og:url" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/index.html">
 <meta property="og:site_name" content="Cai MY&#39;s blog">
 <meta property="og:description" content="前言最近参加了大创项目，题目涉及到计算机视觉，学姐发了个修正图像的博客链接，于是打算用这个题目入门OpenCV。 分析问题照片中的PPT区域总是沿着x,y,z三个轴都有倾斜（如下图），要想把照片翻转到平行位置，需要进行透视变换，而透视变换需要同一像素点变换前后的坐标。由此可以想到，提取矩形区域四个角的坐标作为变换前的坐标，变换后的坐标可以设为照片的四个角落，经过投影变换，矩形区域将会翻转并充满图像">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/2.jpg">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/3.jpg">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/4.jpg">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/5.jpg">
-<meta property="og:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/6.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/2.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/3.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/4.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/5.jpg">
+<meta property="og:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/6.jpg">
 <meta property="og:updated_time" content="2018-04-08T09:02:29.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用OpenCV提取图像中的矩形区域（PPT屏幕等）">
 <meta name="twitter:description" content="前言最近参加了大创项目，题目涉及到计算机视觉，学姐发了个修正图像的博客链接，于是打算用这个题目入门OpenCV。 分析问题照片中的PPT区域总是沿着x,y,z三个轴都有倾斜（如下图），要想把照片翻转到平行位置，需要进行透视变换，而透视变换需要同一像素点变换前后的坐标。由此可以想到，提取矩形区域四个角的坐标作为变换前的坐标，变换后的坐标可以设为照片的四个角落，经过投影变换，矩形区域将会翻转并充满图像">
-<meta name="twitter:image" content="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg">
+<meta name="twitter:image" content="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
-    scheme: 'Muse',
+    root: '/',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/"/>
+  <link rel="canonical" href="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/"/>
 
 
 
@@ -161,7 +161,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Cai MY's blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -189,7 +189,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -199,7 +199,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/blog/tags/" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -209,7 +209,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/blog/categories/" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -219,7 +219,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -298,12 +298,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://192.144.134.88/blog/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/">
+    <link itemprop="mainEntityOfPage" href="https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cai.MY">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -350,7 +350,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/图像处理/" itemprop="url" rel="index">
+                  <a href="/categories/图像处理/" itemprop="url" rel="index">
                     <span itemprop="name">图像处理</span>
                   </a>
                 </span>
@@ -368,7 +368,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/#comments" itemprop="discussionUrl">
+                <a href="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/" itemprop="commentCount"></span>
                 </a>
@@ -378,7 +378,7 @@
 
           
           
-             <span id="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/" class="leancloud_visitors" data-flag-title="利用OpenCV提取图像中的矩形区域（PPT屏幕等）">
+             <span id="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/" class="leancloud_visitors" data-flag-title="利用OpenCV提取图像中的矩形区域（PPT屏幕等）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +410,7 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近参加了大创项目，题目涉及到计算机视觉，学姐发了个修正图像的博客链接，于是打算用这个题目入门OpenCV。</p>
-<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>照片中的PPT区域总是沿着x,y,z三个轴都有倾斜（如下图），要想把照片翻转到平行位置，需要进行透视变换，而透视变换需要同一像素点变换前后的坐标。由此可以想到，提取矩形区域四个角的坐标作为变换前的坐标，变换后的坐标可以设为照片的四个角落，经过投影变换，矩形区域将会翻转并充满图像。<br><a id="more"></a><br> <img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg" title="Source image"></p>
+<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>照片中的PPT区域总是沿着x,y,z三个轴都有倾斜（如下图），要想把照片翻转到平行位置，需要进行透视变换，而透视变换需要同一像素点变换前后的坐标。由此可以想到，提取矩形区域四个角的坐标作为变换前的坐标，变换后的坐标可以设为照片的四个角落，经过投影变换，矩形区域将会翻转并充满图像。<br><a id="more"></a><br> <img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/1.jpg" title="Source image"></p>
 <p>因此我们要解决的问题变为：提取矩形的四个角落、进行透视变换。</p>
 <h2 id="提取矩形角落坐标"><a href="#提取矩形角落坐标" class="headerlink" title="提取矩形角落坐标"></a>提取矩形角落坐标</h2><p>矩形的检测主要是提取边缘，PPT显示部分的亮度通常高于周围环境，我们可以将图片阈值化，将PPT部分与周围环境明显的分别开来，这对后边的边缘检测非常有帮助。</p>
 <p>检测矩形并提取坐标需要对图像进行预处理、边缘检测、提取轮廓、检测凸包、角点检测。</p>
@@ -419,7 +419,7 @@
 <h4 id="转化为灰度图"><a href="#转化为灰度图" class="headerlink" title="转化为灰度图"></a>转化为灰度图</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cvtColor(shrinkedPic, greyPic, COLOR_BGR2GRAY);	<span class="comment">//转化为灰度图</span></span><br></pre></td></tr></table></figure>
 <h4 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a>中值滤波</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">medianBlur(greyPic, greyPic, <span class="number">7</span>);	<span class="comment">//中值滤波</span></span><br></pre></td></tr></table></figure>
 <h4 id="转为二值图片"><a href="#转为二值图片" class="headerlink" title="转为二值图片"></a>转为二值图片</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">threshold(greyPic, binPic, <span class="number">80</span>, <span class="number">255</span>, THRESH_BINARY);	<span class="comment">//阈值化为二值图片</span></span><br></pre></td></tr></table></figure>
-<p>此时图片已经变成了这个样子：<br><img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/2.jpg" title="二值图"></p>
+<p>此时图片已经变成了这个样子：<br><img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/2.jpg" title="二值图"></p>
 <p>可见PPT部分已经与环境分离开来。</p>
 <h3 id="边缘检测与轮廓处理"><a href="#边缘检测与轮廓处理" class="headerlink" title="边缘检测与轮廓处理"></a>边缘检测与轮廓处理</h3><h4 id="进行Canny边缘检测"><a href="#进行Canny边缘检测" class="headerlink" title="进行Canny边缘检测"></a>进行Canny边缘检测</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Canny(binPic, cannyPic, cannyThr, cannyThr*FACTOR);	<span class="comment">//Canny边缘检测</span></span><br></pre></td></tr></table></figure>
 <p>这里 <code>cannyThr = 200, FACTOR = 2.5</code><br>可能由于边缘特征过于明显，系数在100-600范围（具体数字可能有出入，反正范围非常大）内产生的效果几乎相同。</p>
@@ -429,17 +429,17 @@
 <p>我们可以反复调用<code>drawContours</code>函数将轮廓画出<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">linePic = Mat::zeros(cannyPic.rows, cannyPic.cols, CV_8UC3);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; contours.size(); index++)&#123;		</span><br><span class="line">		drawContours(linePic, contours, index, Scalar(rand() &amp; <span class="number">255</span>, rand() &amp; <span class="number">255</span>, rand() &amp; <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span><span class="comment">/*, hierarchy*/</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>drawContours</code>函数原型：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CV_EXPORTS_W <span class="keyword">void</span> <span class="title">drawContours</span><span class="params">( InputOutputArray image, InputArrayOfArrays contours,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> contourIdx, <span class="keyword">const</span> Scalar&amp; color,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> thickness = <span class="number">1</span>, <span class="keyword">int</span> lineType = LINE_8,</span></span></span><br><span class="line">                            InputArray hierarchy = noArray(),</span><br><span class="line">                            <span class="keyword">int</span> maxLevel = INT_MAX, Point offset = Point() );</span><br></pre></td></tr></table></figure></p>
 <p>作用是将<code>contours</code>中的第<code>contourIdx</code>条轮廓用<code>color</code>颜色绘制到<code>image</code>中，<code>thickness</code>为线条的粗细， <code>contourIdx</code>为负数时画出所有轮廓                         </p>
-<p>这里要注意的是在绘制轮廓前要提前为输出矩阵分配空间，否则会出现以下错误<br><code>OpenCV(3.4.1) Error: Assertion failed (size.width&gt;0 &amp;&amp; size.height&gt;0) in cv::imshow, file C:\build\master_winpack-build-win64-vc15\opencv\modules\highgui\src\window.cpp, line 356</code><br><img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/3.jpg" title="轮廓图"></p>
+<p>这里要注意的是在绘制轮廓前要提前为输出矩阵分配空间，否则会出现以下错误<br><code>OpenCV(3.4.1) Error: Assertion failed (size.width&gt;0 &amp;&amp; size.height&gt;0) in cv::imshow, file C:\build\master_winpack-build-win64-vc15\opencv\modules\highgui\src\window.cpp, line 356</code><br><img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/3.jpg" title="轮廓图"></p>
 <h4 id="提取面积最大的轮廓并用多边形将轮廓包围"><a href="#提取面积最大的轮廓并用多边形将轮廓包围" class="headerlink" title="提取面积最大的轮廓并用多边形将轮廓包围"></a>提取面积最大的轮廓并用多边形将轮廓包围</h4><p>从上面的轮廓图中看出，PPT的矩形已经成为了图片的主要部分，接下来的思路是提取面积最大的轮廓，得到矩形轮廓。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;Point&gt;&gt; polyContours(contours.size());</span><br><span class="line"><span class="keyword">int</span> maxArea = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> index = <span class="number">0</span>; index &lt; contours.size(); index++)&#123;		</span><br><span class="line">		<span class="keyword">if</span> (contourArea(contours[index]) &gt; contourArea(contours[maxArea]))</span><br><span class="line">			maxArea = index;		</span><br><span class="line">        approxPolyDP(contours[index], polyContours[index], <span class="number">10</span>, <span class="literal">true</span>);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
 <p><code>contourArea</code>用来计算轮廓的面积<br><code>approxPolyDP</code>的作用是用多边形包围轮廓，可以得到严格的矩形，有助于找到角点</p>
 <p>画出矩形，同样注意要提前为<code>Mat</code>分配空间<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Mat polyPic = Mat::zeros(shrinkedPic.size(), CV_8UC3);</span><br><span class="line">drawContours(polyPic, polyContours, maxArea, Scalar(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span><span class="comment">/*rand() &amp; 255, rand() &amp; 255, rand() &amp; 255*/</span>), <span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
-<img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/4.jpg" title="矩形图像">
+<img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/4.jpg" title="矩形图像">
 <p>如图，接下来我们只需提取到四个角的坐标</p>
 <h4 id="寻找凸包"><a href="#寻找凸包" class="headerlink" title="寻找凸包"></a>寻找凸包</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;  hull;</span><br><span class="line">convexHull(polyContours[maxArea], hull, <span class="literal">false</span>);	<span class="comment">//检测该轮廓的凸包</span></span><br></pre></td></tr></table></figure>
 <p><code>convexHull</code>函数原型<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">CV_EXPORTS_W <span class="keyword">void</span> <span class="title">convexHull</span><span class="params">( InputArray points, OutputArray hull,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">bool</span> clockwise = <span class="literal">false</span>, <span class="keyword">bool</span> returnPoints = <span class="literal">true</span> )</span></span>;</span><br></pre></td></tr></table></figure></p>
 <p><code>hull</code>为输出参数， <code>clockwise</code>决定凸包顺逆时针方向， <code>returnPoints</code>为真时返回凸包的各个点，否则返回各点的指数<br><code>hull</code>可以为<code>vector&lt;int&gt;</code>类型，此时返回的是凸包点在原图中的下标索引</p>
 <p>我们可以把点和多边形添加到原图中查看效果<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; hull.size(); ++i)&#123;</span><br><span class="line">		circle(polyPic, polyContours[maxArea][i], <span class="number">10</span>, Scalar(rand() &amp; <span class="number">255</span>, rand() &amp; <span class="number">255</span>, rand() &amp; <span class="number">255</span>), <span class="number">3</span>);</span><br><span class="line">	&#125;</span><br><span class="line">addWeighted(polyPic, <span class="number">0.5</span>, shrinkedPic, <span class="number">0.5</span>, <span class="number">0</span>, shrinkedPic);</span><br></pre></td></tr></table></figure></p>
-<img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/5.jpg" title="效果图">
+<img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/5.jpg" title="效果图">
 <p><strong>现在我们已经比较准确地获得了需要的点，下面就要利用这些点进行坐标映射。</strong></p>
 <h2 id="投影变换"><a href="#投影变换" class="headerlink" title="投影变换"></a>投影变换</h2><p>投影变换需要像素在两个坐标系中的坐标一一对应，虽然我们已经有了四个坐标，但还没有区分它们的位置。</p>
 <p>新建两个数组<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Point2f srcPoints[<span class="number">4</span>], dstPoints[<span class="number">4</span>];</span><br><span class="line">dstPoints[<span class="number">0</span>] = Point2f(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">dstPoints[<span class="number">1</span>] = Point2f(srcPic.cols, <span class="number">0</span>);</span><br><span class="line">dstPoints[<span class="number">2</span>] = Point2f(srcPic.cols, srcPic.rows);</span><br><span class="line">dstPoints[<span class="number">3</span>] = Point2f(<span class="number">0</span>, srcPic.rows);</span><br></pre></td></tr></table></figure></p>
@@ -450,7 +450,7 @@
 <p>接下来进行坐标变换，网上查到的步骤都是通过<code>perspectiveTransform</code>函数变换，但尝试多次都出现了报错，Google了好长时间才知道原来这个函数的传入输入输出参数均为点集，我们这个场景用起来比较麻烦。</p>
 <p>而<code>warpPerspective</code>函数可以直接传入输入<code>Mat</code>类型数据，比较方便<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">warpPerspective(srcPic, outPic, transMat, srcPic.size());	<span class="comment">//进行坐标变换</span></span><br></pre></td></tr></table></figure></p>
 <p>参数分别为输入输出图像、变换矩阵、大小。</p>
-<p>坐标变换后就得到了我们要的最终图像。<br><img src="/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/6.jpg" title="最终图像"></p>
+<p>坐标变换后就得到了我们要的最终图像。<br><img src="/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/6.jpg" title="最终图像"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们利用了屏幕亮度较高的特点，通过二值化突出轮廓提取坐标，进行透视变换。</p>
 <p>但局限性在于，如果矩形的亮度与背景相差不大，就很难用这种方法检测到轮廓。</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
@@ -474,9 +474,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/opencv/" rel="tag"># opencv</a>
+            <a href="/tags/opencv/" rel="tag"># opencv</a>
           
-            <a href="/blog/tags/c/" rel="tag"># c++</a>
+            <a href="/tags/c/" rel="tag"># c++</a>
           
         </div>
       
@@ -489,7 +489,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/04/08/hello-world/" rel="next" title="Hello World">
+              <a href="/2018/04/08/hello-world/" rel="next" title="Hello World">
                 <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
@@ -582,7 +582,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/blog/archives/">
+                <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
@@ -594,7 +594,7 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/blog/categories/index.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
@@ -605,7 +605,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/blog/tags/index.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -693,7 +693,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -752,57 +752,57 @@
 
   
   
-    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
-
 
 
   
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -818,7 +818,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://192.144.134.88/blog/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/';
+          this.page.url = 'https://c-my.github.io/2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/';
           this.page.identifier = '2018/04/08/利用OpenCV提取图像中的矩形区域（PPT屏幕等）/';
           this.page.title = '利用OpenCV提取图像中的矩形区域（PPT屏幕等）';
         };
@@ -863,14 +863,14 @@
   
   
   
-  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
   
   
-  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="/blog/js/src/algolia-search.js?v=5.1.4"></script>
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
